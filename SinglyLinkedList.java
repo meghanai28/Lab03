@@ -1,5 +1,3 @@
-
-
 public class SinglyLinkedList {
 	private int count;
 	private LinkNode start;
@@ -75,7 +73,7 @@ public class SinglyLinkedList {
 			added.setNext(curr);
 			prev.setNext(added);
 		}
-			count++;
+		count++;
 		
 		
 	}
@@ -108,8 +106,7 @@ public class SinglyLinkedList {
 			else if(curr == start)
 			{
 				curr = curr.getNext();
-				start = new LinkNode(curr.getData(),curr.getNext());
-				curr = start;
+				start = curr;
 			}
 			else
 			{
@@ -155,8 +152,7 @@ public class SinglyLinkedList {
 			else
 			{
 				curr = curr.getNext();
-				start = new LinkNode(curr.getData(),curr.getNext());
-				curr = start;
+				start = curr;
 			}
 		}
 		else
@@ -226,7 +222,7 @@ public class SinglyLinkedList {
 		LinkNode temp = start;
 		while(temp != null)
 		{
-			System.out.print(temp.getData()+ "  ");
+			System.out.print(temp.getData()+ "	");
 			temp = temp.getNext();
 		}
 	}
