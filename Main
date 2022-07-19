@@ -1,4 +1,5 @@
 
+
 public class Main {
 	public static void main (String[] args) throws Exception
 	{
@@ -25,6 +26,7 @@ public class Main {
 	
 		test.removeCurrency(2);
 		
+
 		System.out.println();
 		test.printList();
 		System.out.println();
@@ -79,7 +81,35 @@ public class Main {
 		System.out.println("\n Done Testing Stack");
 		
 		
+		System.out.println("\n\nTesting Queue");
+		Queue test3 = new Queue();
+		for(int i = 0 ; i<7; i++)
+		{
+			test3.enqueue(arr[5+i]);
+		}
+		
+		System.out.println(test3.peekFront());
+		System.out.println(test3.peekRear());
 
-
+		test3.dequeue();
+		test3.dequeue();
+		
+		System.out.println();
+		test3.printQueue();
+		System.out.println();
+		
+		for(int i = 0 ; i<5; i++)
+		{
+			test3.enqueue(arr[10+i]);
+		}
+		
+		test3.dequeue();
+		test3.dequeue();
+		test3.dequeue();
+		
+		System.out.println();
+		test3.printQueue();
+		System.out.println();
+		
 	}
 }
