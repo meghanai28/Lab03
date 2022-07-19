@@ -1,3 +1,5 @@
+
+
 public class SinglyLinkedList {
 	private int count;
 	private LinkNode start;
@@ -38,113 +40,152 @@ public class SinglyLinkedList {
 		return start == null;
 	}
 	
+	
 	public void addCurrency(Currency value, int index) throws Exception
 	{
 		LinkNode added = new LinkNode(value);
-		if(index>=0 && index<= count)
+		if(index<0 && index> count)
 		{
-			if(start == null&& index == 0)
-			{
-				start = added;
-			}
-		
-			else if(start!= null && index ==0)
-			{
-				added.setNext(start);
-				start = added;
-			}
-			else
-			{
-				LinkNode prev = null;
-				LinkNode curr = start;
-				for(int i =0; i<index; i++)
-				{
-					prev = curr;
-					curr = curr.getNext();
-				}
-				added.setNext(curr);
-				prev.setNext(added);
-			}
-			count++;
+			throw new Exception("Index out of bounds");
+		}
+		if(start == null&& index == 0)
+		{
+			start = added;
+			end = added;
+		}
+		else if(start!= null && index ==0)
+		{
+			added.setNext(start);
+			start = added;
+		}
+		else if(index == count)
+		{
+			end.setNext(added);
+			end = added;
 		}
 		else
 		{
-			throw new Exception();
+			LinkNode prev = null;
+			LinkNode curr = start;
+			for(int i =0; i<index; i++)
+			{
+				prev = curr;
+				curr = curr.getNext();
+			}
+			added.setNext(curr);
+			prev.setNext(added);
 		}
+			count++;
+		
+		
 	}
 	
 	
 	
 	public void removeCurrency(Currency value) throws Exception
 	{
-		if(start!=null)
+		if( start==null)
 		{
-			LinkNode prev = null;
-			LinkNode curr = start;
-		
-			if(curr.getData().isEqual(value))
-			{
-				curr = curr.getNext();
-				start = new LinkNode(curr.getData(),curr.getNext());
-				curr = start;
-			}
-		
-			boolean deleted = false;
-			for(int i =0; i<count&& deleted != true; i++)
-			{
-				if(!curr.getData().isEqual(value))
-				{
-					prev = curr;
-					curr = curr.getNext();
-				}
-				if(curr!= null && curr.getData().isEqual(value))
-				{
-					prev.setNext(curr.getNext());
-					curr = curr.getNext();
-					deleted = true;
-				}
-			}
-			count--;
+			throw new Exception("Empty, cannot delete");
 		}
-	}
-	
-	
-	
-	
-	public void removeCurrency(int index)
-	{
-		if(index>=0 && index<count && start!=null)
+		
+		LinkNode prev = null;
+		LinkNode curr = start;
+		
+		while(!curr.getData().isEqual(value) && curr.getNext()!= null)
 		{
-			LinkNode prev = null;
-			LinkNode curr = start;
-			
-			if(index ==0)
-			{	
+			prev = curr;
+			curr = curr.getNext();
+		}
+		
+		if(curr.getData().isEqual(value))
+		{
+			if(count == 1)
+			{
+				start = null;
+				end = null;
+			}
+			else if(curr == start)
+			{
 				curr = curr.getNext();
 				start = new LinkNode(curr.getData(),curr.getNext());
 				curr = start;
 			}
 			else
 			{
-				for(int i =0; i<index; i++)
+				if(curr== end)
 				{
-					prev = curr;
-					curr = curr.getNext();
-					
-					if(i==index-1)
-					{
-						prev.setNext(curr.getNext());
-						curr = curr.getNext();
-				
-					}
+					end = prev;
 				}
+				prev.setNext(curr.getNext());
+				curr = curr.getNext();
+				
 			}
 			count--;
 		}
+					
+	}
+	
+	
+	
+	
+	public void removeCurrency(int index) throws Exception
+	{
+		if( start==null)
+		{
+			throw new Exception("Empty, cannot delete");
+		}
+		
+		if(index<0 && index>count)
+		{
+			throw new Exception("Index out of bounds");
+		}
+		
+		
+		LinkNode prev = null;
+		LinkNode curr = start;
+			
+		if(index ==0)
+		{	
+			if(count == 1)
+			{
+				start = null;
+				end = null;
+			}
+			else
+			{
+				curr = curr.getNext();
+				start = new LinkNode(curr.getData(),curr.getNext());
+				curr = start;
+			}
+		}
+		else
+		{
+			
+			for(int i =0; i<index; i++)
+			{
+				prev = curr;
+				curr = curr.getNext();		
+			}
+			
+			if(end == curr)
+			{
+				end = prev;
+			}
+			
+			prev.setNext(curr.getNext());
+			curr = curr.getNext();
+		}
+		count--;
+		
 	}
 	
 	public int findCurrency(Currency value) throws Exception
 	{
+		if( start==null)
+		{
+			throw new Exception("Empty, cannot search");
+		}
 		LinkNode temp = start;
 		int index =0;
 		while(temp!=null && !temp.getData().isEqual(value))
@@ -159,10 +200,17 @@ public class SinglyLinkedList {
 		return index;
 	}
 	
-	public LinkNode getCurrency(int index)
+	public LinkNode getCurrency(int index) throws Exception
 	{
+		if( start==null)
+		{
+			throw new Exception("Empty, cannot search");
+		}
+		if(index<0 && index> count)
+		{
+			throw new Exception("Index out of bounds");
+		}
 		LinkNode temp = start;
-		
 		for(int i =0; i<index; i++)
 		{
 			temp = temp.getNext();
@@ -187,4 +235,3 @@ public class SinglyLinkedList {
 	
 	
 }
-
