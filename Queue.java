@@ -1,5 +1,4 @@
 
-
 public class Queue extends SinglyLinkedList {
 
 	public Queue()
@@ -34,6 +33,11 @@ public class Queue extends SinglyLinkedList {
 		super.printList();
 	}
 	
+	public void deleteQueue()
+	{
+		super.deleteList();
+	}
+	
 	
 	
 	
@@ -64,7 +68,6 @@ public class Queue extends SinglyLinkedList {
 	}
 	
 	
-	
 	public void removeCurrency(Currency value)
 	{
 		throw new UnsupportedOperationException();		
@@ -87,6 +90,11 @@ public class Queue extends SinglyLinkedList {
 	}
 	
 	public void printList() 
+	{
+		throw new UnsupportedOperationException();
+	}
+	
+	public void deleteList()
 	{
 		throw new UnsupportedOperationException();
 	}
