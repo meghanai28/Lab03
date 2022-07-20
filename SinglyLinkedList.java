@@ -114,14 +114,13 @@ public class SinglyLinkedList {
 		
 		if(curr.getData().isEqual(value))
 		{
-			if(count == 1)
-			{
-				start = null;
-				end = null;
-			}
-			else if(curr == start)
+			if(curr == start)
 			{
 				start = curr.getNext();
+				if(count == 1)
+				{
+					end = null;
+				}
 			}
 			else
 			{
@@ -155,16 +154,14 @@ public class SinglyLinkedList {
 		
 		LinkNode prev = null;
 		LinkNode curr = start;
-		
-		if(count == 1)
-		{
-			start = null;
-			end = null;
-		}	
-		else if(index ==0)
+
+		if(index ==0)
 		{	
-			curr = curr.getNext();
-			start = curr;	
+			start = curr.getNext();	
+			if(count == 1)
+			{
+				end = null;
+			}	
 		}
 		else
 		{
