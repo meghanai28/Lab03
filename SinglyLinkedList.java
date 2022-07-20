@@ -11,7 +11,7 @@ public class SinglyLinkedList {
 	public SinglyLinkedList()
 	{
 		start = null;
-		end = null;
+		end = end;
 		count = 0;
 	}
 	
@@ -232,13 +232,7 @@ public class SinglyLinkedList {
 		}
 	}
 	
-	public void deleteList()
-	{
-		start = null;
-		end = null;
-		count = 0;
-		
-	}
+
 	
 	
 	
