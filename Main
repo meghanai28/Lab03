@@ -1,5 +1,4 @@
 
-
 public class Main {
 	public static void main (String[] args) throws Exception
 	{
@@ -15,7 +14,6 @@ public class Main {
 		{
 			test.addCurrency(arr[i], 0);
 		}
-		
 		
 
 		System.out.println();
@@ -46,7 +44,7 @@ public class Main {
 		test.removeCurrency(test.countCurrency() / 7);
 		System.out.println();
 		test.printList();
-		System.out.println("\nDone testing Singly linkedlist");
+		System.out.println("\nDone testing Singly linked list");
 		
 		System.out.println("\n\nTesting Stack");
 		Stack test2 = new Stack();
@@ -78,7 +76,7 @@ public class Main {
 		test2.printStack();
 		System.out.println();
 		
-		System.out.println("\n Done Testing Stack");
+		System.out.println("\nDone Testing Stack");
 		
 		
 		System.out.println("\n\nTesting Queue");
@@ -110,6 +108,10 @@ public class Main {
 		System.out.println();
 		test3.printQueue();
 		System.out.println();
+		System.out.println("\n\nDone Testing Queue");
 		
+		test.deleteList();
+		test2.deleteStack();
+		test3.deleteQueue();
 	}
 }
