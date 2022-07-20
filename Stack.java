@@ -28,10 +28,7 @@ public class Stack extends SinglyLinkedList {
 		super.printList();
 	}
 	
-	public void deleteStack()
-	{
-		super.deleteList();
-	}
+
 	
 	
 	
@@ -93,10 +90,7 @@ public class Stack extends SinglyLinkedList {
 		throw new UnsupportedOperationException();
 	}
 	
-	public void deleteList()
-	{
-		throw new UnsupportedOperationException();
-	}
+	
 	
 	
 }
