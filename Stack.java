@@ -1,4 +1,5 @@
 
+
 public class Stack extends SinglyLinkedList {
 	
 	public Stack()
@@ -6,29 +7,87 @@ public class Stack extends SinglyLinkedList {
 		super();
 	}
 	
-	public void push(Currency val) throws Exception
+	public void push(Currency val) 
 	{
-		addCurrency(val, 0);
+		super.addCurrency(val, 0);
 	}
 	
-	public Currency pop() throws Exception
+	public Currency pop() 
 	{
-		Currency val = getStart().getData();
-		removeCurrency(0);
+		Currency val = super.getStart().getData();
+		super.removeCurrency(0);
 		return val;
 	}
 	
-	public Currency peek() throws Exception
+	public Currency peek() 
 	{
-		return getStart().getData();
+		return super.getStart().getData();
 	}
 	
-	public void printStack()
+	public void printStack() 
 	{
-		printList();
+		super.printList();
 	}
 	
 	
+	
+	
+	
+	
+	public LinkNode getStart()
+	{
+		throw new UnsupportedOperationException();
+	}
+	
+	public LinkNode getEnd() 
+	{
+		throw new UnsupportedOperationException();
+	}
+	
+	public int countCurrency() 
+	{
+		throw new UnsupportedOperationException();
+	}
+	
+	public boolean isListEmpty()
+	{
+		throw new UnsupportedOperationException();
+	}
+	
+	
+	public void addCurrency(Currency value, int index) 
+	{
+		throw new UnsupportedOperationException();
+		
+		
+	}
+	
+	public void removeCurrency(Currency value) 
+	{
+		throw new UnsupportedOperationException();
+					
+	}
+		
+	public void removeCurrency(int index) 
+	{
+		throw new UnsupportedOperationException();
+		
+	}
+	
+	public int findCurrency(Currency value) 
+	{
+		throw new UnsupportedOperationException();
+	}
+	
+	public LinkNode getCurrency(int index) 
+	{
+		throw new UnsupportedOperationException();
+	}
+	
+	public void printList() 
+	{
+		throw new UnsupportedOperationException();
+	}
 	
 	
 }
