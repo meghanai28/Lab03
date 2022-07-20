@@ -23,9 +23,9 @@ public class Stack extends SinglyLinkedList {
 		return super.getStart().getData();
 	}
 	
-	public void printStack() 
+	public String printStack() 
 	{
-		super.printList();
+		return super.printList();
 	}
 	
 
@@ -85,7 +85,7 @@ public class Stack extends SinglyLinkedList {
 		throw new UnsupportedOperationException();
 	}
 	
-	public void printList() 
+	public String printList() 
 	{
 		throw new UnsupportedOperationException();
 	}
