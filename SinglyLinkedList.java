@@ -49,7 +49,7 @@ public class SinglyLinkedList {
 		{
 			throw new IllegalArgumentException();
 		}
-		if(index<0 && index> count)
+		if(index<0 || index> count)
 		{
 			throw new IllegalArgumentException();
 		}
@@ -144,7 +144,7 @@ public class SinglyLinkedList {
 			throw new BufferUnderflowException();
 		}
 		
-		if(index<0 && index>count)
+		if(index<0 || index>=count)
 		{
 			throw new IllegalArgumentException();
 		}
@@ -209,7 +209,7 @@ public class SinglyLinkedList {
 	
 	public LinkNode getCurrency(int index) 
 	{
-		if(index<0 && index> count)
+		if(index<0 || index>= count)
 		{
 			throw new IllegalArgumentException();
 		}
