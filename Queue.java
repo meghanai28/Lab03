@@ -1,4 +1,3 @@
-
 public class Queue extends SinglyLinkedList {
 
 	public Queue()
@@ -28,9 +27,9 @@ public class Queue extends SinglyLinkedList {
 		return super.getEnd().getData();
 	}
 	
-	public void printQueue() 
+	public String printQueue() 
 	{
-		super.printList();
+		return super.printList();
 	}
 	
 	
@@ -85,7 +84,7 @@ public class Queue extends SinglyLinkedList {
 		throw new UnsupportedOperationException();
 	}
 	
-	public void printList() 
+	public String printList() 
 	{
 		throw new UnsupportedOperationException();
 	}
