@@ -118,8 +118,7 @@ public class SinglyLinkedList {
 			}
 			else if(curr == start)
 			{
-				curr = curr.getNext();
-				start = curr;
+				start = curr.getNext();
 			}
 			else
 			{
@@ -128,7 +127,6 @@ public class SinglyLinkedList {
 					end = prev;
 				}
 				prev.setNext(curr.getNext());
-				curr = curr.getNext();
 				
 			}
 			count--;
@@ -183,7 +181,6 @@ public class SinglyLinkedList {
 			}
 			
 			prev.setNext(curr.getNext());
-			curr = curr.getNext();
 		}
 		count--;
 		
