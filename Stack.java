@@ -1,5 +1,4 @@
 
-
 public class Stack extends SinglyLinkedList {
 	
 	public Stack()
@@ -27,6 +26,11 @@ public class Stack extends SinglyLinkedList {
 	public void printStack() 
 	{
 		super.printList();
+	}
+	
+	public void deleteStack()
+	{
+		super.deleteList();
 	}
 	
 	
@@ -85,6 +89,11 @@ public class Stack extends SinglyLinkedList {
 	}
 	
 	public void printList() 
+	{
+		throw new UnsupportedOperationException();
+	}
+	
+	public void deleteList()
 	{
 		throw new UnsupportedOperationException();
 	}
