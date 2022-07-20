@@ -232,6 +232,14 @@ public class SinglyLinkedList {
 		}
 	}
 	
+	public void deleteList()
+	{
+		start = null;
+		end = null;
+		count = 0;
+		
+	}
+	
 	
 	
 	
