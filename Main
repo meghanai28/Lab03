@@ -46,6 +46,7 @@ public class Main {
 		test.printList();
 		System.out.println("\nDone testing Singly linked list");
 		
+		
 		System.out.println("\n\nTesting Stack");
 		Stack test2 = new Stack();
 		
@@ -110,8 +111,10 @@ public class Main {
 		System.out.println();
 		System.out.println("\n\nDone Testing Queue");
 		
-		test.deleteList();
-		test2.deleteStack();
-		test3.deleteQueue();
+		test = null;
+		test2 = null;
+		test3 = null;
+		
+		
 	}
 }
