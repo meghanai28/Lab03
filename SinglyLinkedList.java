@@ -51,7 +51,7 @@ public class SinglyLinkedList {
 		}
 		
 		LinkNode added = new LinkNode(value);
-		if(start == null&& index == 0)
+		if(start == null && index == 0)
 		{
 			start = added;
 			end = added;
@@ -148,19 +148,16 @@ public class SinglyLinkedList {
 		
 		LinkNode prev = null;
 		LinkNode curr = start;
-			
-		if(index ==0)
+		
+		if(count == 1)
+		{
+			start = null;
+			end = null;
+		}	
+		else if(index ==0)
 		{	
-			if(count == 1)
-			{
-				start = null;
-				end = null;
-			}
-			else
-			{
-				curr = curr.getNext();
-				start = curr;
-			}
+			curr = curr.getNext();
+			start = curr;	
 		}
 		else
 		{
