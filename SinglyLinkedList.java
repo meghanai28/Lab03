@@ -45,11 +45,7 @@ public class SinglyLinkedList {
 	
 	public void addCurrency(Currency value, int index) 
 	{
-		if(value == null)
-		{
-			throw new IllegalArgumentException();
-		}
-		if(index<0 || index> count)
+		if(value == null || index<0 || index> count)
 		{
 			throw new IllegalArgumentException();
 		}
