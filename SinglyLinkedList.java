@@ -1,4 +1,8 @@
+import java.nio.BufferUnderflowException;
+import java.util.NoSuchElementException;
+
 public class SinglyLinkedList {
+	
 	private int count;
 	private LinkNode start;
 	private LinkNode end;
@@ -10,25 +14,25 @@ public class SinglyLinkedList {
 		count = 0;
 	}
 	
-	public LinkNode getStart() throws Exception
+	public LinkNode getStart() 
 	{
 		if(start == null)
 		{
-			throw new Exception();
+			throw new NoSuchElementException();
 		}
 		return start;
 	}
 	
-	public LinkNode getEnd() throws Exception
+	public LinkNode getEnd() 
 	{
 		if(end == null)
 		{
-			throw new Exception();
+			throw new NoSuchElementException();
 		}
 		return end;
 	}
 	
-	public int countCurrency()
+	public int countCurrency() 
 	{
 		return count;
 	}
@@ -39,13 +43,18 @@ public class SinglyLinkedList {
 	}
 	
 	
-	public void addCurrency(Currency value, int index) throws Exception
+	public void addCurrency(Currency value, int index) 
 	{
-		LinkNode added = new LinkNode(value);
+		if(value == null)
+		{
+			throw new IllegalArgumentException();
+		}
 		if(index<0 && index> count)
 		{
-			throw new Exception("Index out of bounds");
+			throw new IllegalArgumentException();
 		}
+		
+		LinkNode added = new LinkNode(value);
 		if(start == null&& index == 0)
 		{
 			start = added;
@@ -80,11 +89,15 @@ public class SinglyLinkedList {
 	
 	
 	
-	public void removeCurrency(Currency value) throws Exception
+	public void removeCurrency(Currency value) throws Exception 
 	{
+		if(value == null)
+		{
+			throw new IllegalArgumentException();
+		}
 		if( start==null)
 		{
-			throw new Exception("Empty, cannot delete");
+			throw new BufferUnderflowException();
 		}
 		
 		LinkNode prev = null;
@@ -126,16 +139,16 @@ public class SinglyLinkedList {
 	
 	
 	
-	public void removeCurrency(int index) throws Exception
+	public void removeCurrency(int index) 
 	{
 		if( start==null)
 		{
-			throw new Exception("Empty, cannot delete");
+			throw new BufferUnderflowException();
 		}
 		
 		if(index<0 && index>count)
 		{
-			throw new Exception("Index out of bounds");
+			throw new IllegalArgumentException();
 		}
 		
 		
@@ -176,12 +189,13 @@ public class SinglyLinkedList {
 		
 	}
 	
-	public int findCurrency(Currency value) throws Exception
+	public int findCurrency(Currency value) throws Exception 
 	{
-		if( start==null)
+		if(value == null)
 		{
-			throw new Exception("Empty, cannot search");
+			throw new IllegalArgumentException();
 		}
+
 		LinkNode temp = start;
 		int index =0;
 		while(temp!=null && !temp.getData().isEqual(value))
@@ -196,16 +210,13 @@ public class SinglyLinkedList {
 		return index;
 	}
 	
-	public LinkNode getCurrency(int index) throws Exception
+	public LinkNode getCurrency(int index) 
 	{
-		if( start==null)
-		{
-			throw new Exception("Empty, cannot search");
-		}
 		if(index<0 && index> count)
 		{
-			throw new Exception("Index out of bounds");
+			throw new IllegalArgumentException();
 		}
+		
 		LinkNode temp = start;
 		for(int i =0; i<index; i++)
 		{
@@ -217,7 +228,7 @@ public class SinglyLinkedList {
 	
 	
 	
-	public void printList()
+	public void printList() 
 	{
 		LinkNode temp = start;
 		while(temp != null)
