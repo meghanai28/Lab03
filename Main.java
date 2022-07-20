@@ -109,6 +109,7 @@ public class Main {
 		System.out.println();
 		System.out.println("\n\nDone Testing Queue");
 		
+		arr = null;
 		test = null;
 		test2 = null;
 		test3 = null;
