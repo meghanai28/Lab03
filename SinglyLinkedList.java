@@ -1,3 +1,4 @@
+import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
 import java.util.NoSuchElementException;
 
@@ -45,41 +46,47 @@ public class SinglyLinkedList {
 	
 	public void addCurrency(Currency value, int index) 
 	{
-		if(value == null || index<0 || index> count)
+		try
 		{
-			throw new IllegalArgumentException();
-		}
-		
-		LinkNode added = new LinkNode(value);
-		if(start == null && index == 0)
-		{
-			start = added;
-			end = added;
-		}
-		else if(start!= null && index ==0)
-		{
-			added.setNext(start);
-			start = added;
-		}
-		else if(index == count)
-		{
-			end.setNext(added);
-			end = added;
-		}
-		else
-		{
-			LinkNode prev = null;
-			LinkNode curr = start;
-			for(int i =0; i<index; i++)
+			if(value == null || index<0 || index> count)
 			{
-				prev = curr;
-				curr = curr.getNext();
+				throw new IllegalArgumentException();
 			}
-			added.setNext(curr);
-			prev.setNext(added);
-		}
-		count++;
 		
+			LinkNode added = new LinkNode(value);
+			if(start == null && index == 0)
+			{
+				start = added;
+				end = added;
+			}
+			else if(start!= null && index ==0)
+			{
+				added.setNext(start);
+				start = added;
+			}
+			else if(index == count)
+			{
+				end.setNext(added);
+				end = added;
+			}
+			else
+			{
+				LinkNode prev = null;
+				LinkNode curr = start;
+				for(int i =0; i<index; i++)
+				{
+					prev = curr;
+					curr = curr.getNext();
+				}
+				added.setNext(curr);
+				prev.setNext(added);
+			}
+			count++;
+		}
+		catch(OutOfMemoryError E)
+		{
+			throw new BufferOverflowException();
+		}
 		
 	}
 	
