@@ -1,20 +1,38 @@
+/**
+ * Lab 03
+ * @author Lab Group 7: Meghana Indukuri & Joseph Khamisy
+ * This program creates the class SinglyLinkedList with private attributes and methods that include adding and 
+ * deleting nodes with given indexes and Currency values.
+ * July 20th 2022
+ */
+
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
 import java.util.NoSuchElementException;
 
 public class SinglyLinkedList {
 	
-	private int count;
-	private LinkNode start;
-	private LinkNode end;
+	private int count;// number of nodes in list
+	private LinkNode start; // head node
+	private LinkNode end; // tail node
 	
+	/**
+	 * Default constructor, sets both start and end nodes to null
+	 * and sets the count to 0.
+	 */
 	public SinglyLinkedList()
 	{
 		start = null;
-		end = end;
+		end = null;
 		count = 0;
 	}
 	
+	/**
+	 * Getter method for starting node
+	 * @pre the linked list must not be empty
+	 * @post throws a noSuchElementException whenever the singlyLinkedList is empty.
+	 * @return the start Linknode.
+	 */
 	public LinkNode getStart() 
 	{
 		if(start == null)
@@ -24,6 +42,12 @@ public class SinglyLinkedList {
 		return start;
 	}
 	
+	/**
+	 * Getter method for ending node
+	 * @pre the linked list must not be empty
+	 * @post throws a noSuchElementException whenever the singlyLinkedList is empty.
+	 * @return the end Linknode.
+	 */
 	public LinkNode getEnd() 
 	{
 		if(end == null)
@@ -33,17 +57,39 @@ public class SinglyLinkedList {
 		return end;
 	}
 	
+	/**
+	 * Returns the count value (i.e the number of nodes)
+	 * @pre
+	 * @post
+	 * @return returns the private attribute int count.
+	 */
 	public int countCurrency() 
 	{
 		return count;
 	}
 	
+	/**
+	 * Checks if the list is empty and returns true or false based on if its empty
+	 * @pre
+	 * @post
+	 * @return if the list is empty, the method returns true, false otherwise.
+	 */
 	public boolean isListEmpty()
 	{
 		return start == null;
 	}
 	
 	
+	/**
+	 * adds a LinkNode to the singlyLinkedList based on a given Currency value and a given index for placement of
+	 * the node. 
+	 * @pre Currency value - the value of the node to be added. value should not be null
+	 * 		int index - the index of where the new node should be added. Index should be in bounds.
+	 * 
+	 * @post if any of the parameters are null or out of bounds an exception is thrown. If there is no more memory
+	 * an overflow exception is thrown. Otherwise a node is added to the singlyLinkedList if all conditions are
+	 * met and then count is incremented.
+	 */
 	public void addCurrency(Currency value, int index) 
 	{
 		try
@@ -91,7 +137,15 @@ public class SinglyLinkedList {
 	}
 	
 	
-	
+	/**
+	 * Removes the first Node that has the same data value as the given currency value.
+	 * @pre Currency value - the value to be searched for and deleted. Cannot be null
+	 *  
+	 * @post  if the parameter is null, a exception is thrown. If the list is empty and the remove method is
+	 * called, an exception is also thrown. Otherwise the currency is searched for and removed.count is decremented.
+	 * However if the method cannot find a matching node to the given currency value, nothing is deleted. 
+	 * 
+	 */
 	public void removeCurrency(Currency value) throws Exception 
 	{
 		if(value == null)
@@ -138,7 +192,13 @@ public class SinglyLinkedList {
 	
 	
 	
-	
+	/**
+	 * Removes the node in the singlyLinkedList at the given index. 
+	 * @pre int index - the index where the node should be deleted. Cannot be an outbounds/invalid index.
+	 * 
+	 * @post if the list is empty, and the remove method is called, there is an underflow exception thrown.
+	 * Otherwise, the node at the index is removed and the count is decremented. 
+	 */
 	public void removeCurrency(int index) 
 	{
 		if( start==null)
@@ -183,6 +243,15 @@ public class SinglyLinkedList {
 		
 	}
 	
+	
+	/**
+	 * Finds the index of given Currency Value. If no node matches the given currency value
+	 * -1 is returned. 
+	 * @pre Given currency value to be searched for. Value cannot be null
+	 * @post if the given parameter is null, an exception is thrown. 
+	 * @return int, the index of the given currency value. If no node matches given
+	 * value then -1 is returned to signify that. 
+	 */
 	public int findCurrency(Currency value) throws Exception 
 	{
 		if(value == null)
@@ -204,6 +273,13 @@ public class SinglyLinkedList {
 		return index;
 	}
 	
+	
+	/**
+	 * Gets the given node at a given index. if the list is empty, the node returned is null.
+	 * @pre int index - the index at which the node should be retrieved. index cannot be outofbounds/invalid.
+	 * @post throws exception when the index is outofbounds/invalid.
+	 * @return LinkNode at given index. if list empty, node returned is null.
+	 */
 	public LinkNode getCurrency(int index) 
 	{
 		if(index<0 || index>= count)
@@ -221,15 +297,23 @@ public class SinglyLinkedList {
 	}
 	
 	
-	
-	public void printList() 
+	/**
+	 * Returns a string with each Node value seperated by a tab in order of the index.
+	 * @pre
+	 * @post
+	 * @return a string with each Node value seperated by a tab in order of the index.
+	 */
+	public String printList() 
 	{
 		LinkNode temp = start;
+		String val = "";
 		while(temp != null)
 		{
-			System.out.print(temp.getData()+ "	");
+			val += temp.getData()+ "	";
 			temp = temp.getNext();
 		}
+		
+		return val;
 	}
 	
 
