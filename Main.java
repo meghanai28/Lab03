@@ -7,7 +7,10 @@ public class Main {
 		new Dollar(345.67),new Dollar(36.18), new Dollar(48.48),new Dollar(101.00),new Dollar(11.00),
 		new Dollar(21.00), new Dollar(51.00), new Dollar(1.00), new Dollar(251.00), new Dollar(151.00)};
 		
-		System.out.println("Testing singlylinkedlist");
+		System.out.println("Welcome to SinglyLinkedList, Stack and Queue tester. We will be testing various operations! \n\n");
+		
+		System.out.println("First we will be testing SinglyLinkedList:");
+		
 		SinglyLinkedList test = new SinglyLinkedList();
 		int add = 7;
 		for(int i = 0; i<add; i++)
@@ -42,10 +45,10 @@ public class Main {
 	
 		test.removeCurrency(test.countCurrency() / 7);
 		System.out.println(	test.printList());
-		System.out.println("\nDone testing Singly linked list");
+		System.out.println("\nDone Testing Singly Linked List!\n");
 		
 		
-		System.out.println("\n\nTesting Stack");
+		System.out.println("\n\nSecond We Will Be Testing Stack:\n");
 		Stack test2 = new Stack();
 		
 		for(int i = 0 ; i<7; i++)
@@ -60,7 +63,6 @@ public class Main {
 		
 		System.out.println();
 		System.out.println(	test2.printStack());
-		System.out.println();
 		
 		for(int i = 0 ; i<5; i++)
 		{
@@ -73,12 +75,11 @@ public class Main {
 		
 		System.out.println();
 		System.out.println(test2.printStack());
-		System.out.println();
 		
-		System.out.println("\nDone Testing Stack");
+		System.out.println("\nDone Testing Stack!\n");
 		
 		
-		System.out.println("\n\nTesting Queue");
+		System.out.println("\n\nThird We Will Be Testing Queue:\n");
 		Queue test3 = new Queue();
 		for(int i = 0 ; i<7; i++)
 		{
@@ -86,6 +87,7 @@ public class Main {
 		}
 		
 		System.out.println(test3.peekFront());
+		System.out.println();
 		System.out.println(test3.peekRear());
 
 		test3.dequeue();
@@ -106,8 +108,7 @@ public class Main {
 		
 		
 		System.out.println(test3.printQueue());
-		System.out.println();
-		System.out.println("\n\nDone Testing Queue");
+		System.out.println("\nDone Testing Queue!");
 		
 		//cleaning up 
 		arr = null;
@@ -115,6 +116,7 @@ public class Main {
 		test2 = null;
 		test3 = null;
 		
+		System.out.println("\n\nWe have compeleted all the tests! Thank you for using this program.");
 		
 	}
 }
