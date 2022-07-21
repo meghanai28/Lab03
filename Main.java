@@ -15,7 +15,7 @@ public class Main {
 		
 		System.out.println("\nWelcome to SinglyLinkedList, Stack and Queue tester. Created by Meghana Indukuri & Joseph Khamisy  \n\n");
 		
-		System.out.println("First we will be testing SinglyLinkedList:");
+		System.out.println("Testing SinglyLinkedList....");
 		
 		SinglyLinkedList test = new SinglyLinkedList();
 		int add = 7;
@@ -26,8 +26,8 @@ public class Main {
 		
 
 		System.out.println();
-		System.out.println(test.findCurrency(new Dollar(87.43)));
-		System.out.println(test.findCurrency(new Dollar(44.56)));
+		System.out.println("Index of $87.43:  " + test.findCurrency(new Dollar(87.43)));
+		System.out.println("Index of $44.56:  "+ test.findCurrency(new Dollar(44.56)));
 		
 		test.removeCurrency(new Dollar(111.22));
 	
@@ -54,7 +54,7 @@ public class Main {
 		System.out.println("\nDone Testing Singly Linked List!\n");
 		
 		
-		System.out.println("\n\nSecond We Will Be Testing Stack:\n");
+		System.out.println("\n\nTesting Stack....\n");
 		Stack test2 = new Stack();
 		
 		for(int i = 0 ; i<7; i++)
@@ -62,7 +62,7 @@ public class Main {
 			test2.push(arr[13+i]);
 		}
 		
-		System.out.println(test2.peek());
+		System.out.println("Peek at stack: " + test2.peek());
 		test2.pop();
 		test2.pop();
 		test2.pop();
@@ -85,16 +85,16 @@ public class Main {
 		System.out.println("\nDone Testing Stack!\n");
 		
 		
-		System.out.println("\n\nThird We Will Be Testing Queue:\n");
+		System.out.println("\n\nTesting Queue....\n");
 		Queue test3 = new Queue();
 		for(int i = 0 ; i<7; i++)
 		{
 			test3.enqueue(arr[5+i]);
 		}
 		
-		System.out.println(test3.peekFront());
+		System.out.println("Peek at front of queue: " + test3.peekFront());
 		System.out.println();
-		System.out.println(test3.peekRear());
+		System.out.println("Peek at end of queue: " + test3.peekRear());
 
 		test3.dequeue();
 		test3.dequeue();
