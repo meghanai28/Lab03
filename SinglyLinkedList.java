@@ -153,7 +153,7 @@ public class SinglyLinkedList {
 		{
 			throw new IllegalArgumentException();
 		}
-		if( start==null)
+		if( isListEmpty())
 		{
 			throw new BufferUnderflowException();
 		}
@@ -204,7 +204,7 @@ public class SinglyLinkedList {
 	 */
 	public Currency removeCurrency(int index) 
 	{
-		if( start==null)
+		if( isListEmpty() )
 		{
 			throw new BufferUnderflowException();
 		}
@@ -252,12 +252,17 @@ public class SinglyLinkedList {
 	 * Finds the index of given Currency Value. If no node matches the given currency value
 	 * -1 is returned. 
 	 * @pre Given currency value to be searched for. Value cannot be null
-	 * @post if the given parameter is null, an exception is thrown. 
+	 * @post if the given parameter is null, an exception is thrown. Or if the linkedList is empty exception is thrown.
 	 * @return int, the index of the given currency value. If no node matches given
 	 * value then -1 is returned to signify that. 
 	 */
 	public int findCurrency(Currency value) throws Exception 
 	{
+		if( isListEmpty())
+		{
+			throw new IllegalStateException();
+		}
+		
 		if(value == null)
 		{
 			throw new IllegalArgumentException();
@@ -281,11 +286,16 @@ public class SinglyLinkedList {
 	/**
 	 * Gets the given node at a given index. if the list is empty, the node returned is null.
 	 * @pre int index - the index at which the node should be retrieved. index cannot be outofbounds/invalid.
-	 * @post throws exception when the index is outofbounds/invalid.
-	 * @return LinkNode at given index. if list empty, node returned is null.
+	 * @post throws exception when the index is outofbounds/invalid, or if the linkedlist is empty.
+	 * @return Currency at given index. if list empty, node returned is null.
 	 */
-	public LinkNode getCurrency(int index) 
+	public Currency getCurrency(int index) 
 	{
+		if( isListEmpty())
+		{
+			throw new IllegalStateException();
+		}
+		
 		if(index<0 || index>= count)
 		{
 			throw new IllegalArgumentException();
@@ -297,7 +307,7 @@ public class SinglyLinkedList {
 			temp = temp.getNext();
 		}
 		
-		return temp;
+		return temp.getData();
 	}
 	
 	
@@ -319,10 +329,5 @@ public class SinglyLinkedList {
 		
 		return val;
 	}
-	
-
-	
-	
-	
-	
+		
 }
