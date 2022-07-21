@@ -1,4 +1,12 @@
-
+/**
+ * Lab 03
+ * @author Lab Group 7: Meghana Indukuri & Joseph Khamisy
+ * This program creates the class Stack which inherits the 
+ * singlyLinkedList class. This program implements methods
+ * for the stack LIFO structure. Stack objects do not allow 
+ * Linked List functions to be used on them.
+ * July 20th 2022
+ */
 public class Stack extends SinglyLinkedList {
 	
 	public Stack()
