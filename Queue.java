@@ -1,3 +1,12 @@
+/**
+ * Lab 03
+ * @author Lab Group 7: Meghana Indukuri & Joseph Khamisy
+ * This program creates the class Queue which inherits the 
+ * singlyLinkedList class. This program implements methods
+ * for the Queue FIFO structure. Queue objects do not allow 
+ * Linked List functions to be used on them.
+ * July 20th 2022
+ */
 public class Queue extends SinglyLinkedList {
 
 	public Queue()
