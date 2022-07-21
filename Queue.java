@@ -38,9 +38,8 @@ public class Queue extends SinglyLinkedList {
 	 */
 	public Currency dequeue()
 	{
-		Currency val = super.getStart().getData();
-		super.removeCurrency(0);
-		return val;
+		
+		return super.removeCurrency(0);
 	}
 	
 	/**
@@ -161,7 +160,7 @@ public class Queue extends SinglyLinkedList {
 	 * @post throws an exception
 	 * 
 	 */
-	public void removeCurrency(Currency value) 
+	public Currency removeCurrency(Currency value) 
 	{
 		throw new UnsupportedOperationException();
 					
@@ -175,7 +174,7 @@ public class Queue extends SinglyLinkedList {
 	 * @post throws an exception
 	 * 
 	 */
-	public void removeCurrency(int index) 
+	public Currency removeCurrency(int index) 
 	{
 		throw new UnsupportedOperationException();
 		
@@ -202,7 +201,7 @@ public class Queue extends SinglyLinkedList {
 	 * @post throws an exception
 	 * 
 	 */
-	public LinkNode getCurrency(int index) 
+	public Currency getCurrency(int index) 
 	{
 		throw new UnsupportedOperationException();
 	}
