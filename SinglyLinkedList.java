@@ -144,9 +144,10 @@ public class SinglyLinkedList {
 	 * @post  if the parameter is null, a exception is thrown. If the list is empty and the remove method is
 	 * called, an exception is also thrown. Otherwise the currency is searched for and removed.count is decremented.
 	 * However if the method cannot find a matching node to the given currency value, nothing is deleted. 
-	 * 
+	 * @return Currency the removed node's value, returns null if value
+	 * does not exist in linkedList
 	 */
-	public void removeCurrency(Currency value) throws Exception 
+	public Currency removeCurrency(Currency value) throws Exception 
 	{
 		if(value == null)
 		{
@@ -186,20 +187,22 @@ public class SinglyLinkedList {
 				
 			}
 			count--;
+			return curr.getData();
 		}
-					
+		return null;
 	}
 	
 	
 	
 	/**
-	 * Removes the node in the singlyLinkedList at the given index. 
+	 * Removes the node in the singlyLinkedList at the given index and returns the node's currency value.
 	 * @pre int index - the index where the node should be deleted. Cannot be an outbounds/invalid index.
 	 * 
 	 * @post if the list is empty, and the remove method is called, there is an underflow exception thrown.
-	 * Otherwise, the node at the index is removed and the count is decremented. 
+	 * Otherwise, the node at the index is removed and the count is decremented.
+	 * @return Currency the removed node's value
 	 */
-	public void removeCurrency(int index) 
+	public Currency removeCurrency(int index) 
 	{
 		if( start==null)
 		{
@@ -240,6 +243,7 @@ public class SinglyLinkedList {
 			prev.setNext(curr.getNext());
 		}
 		count--;
+		return curr.getData();
 		
 	}
 	
