@@ -153,7 +153,7 @@ public class SinglyLinkedList {
 		{
 			throw new IllegalArgumentException();
 		}
-		if( isListEmpty())
+		if( start == null)
 		{
 			throw new BufferUnderflowException();
 		}
@@ -204,7 +204,7 @@ public class SinglyLinkedList {
 	 */
 	public Currency removeCurrency(int index) 
 	{
-		if( isListEmpty() )
+		if( start == null )
 		{
 			throw new BufferUnderflowException();
 		}
@@ -258,7 +258,7 @@ public class SinglyLinkedList {
 	 */
 	public int findCurrency(Currency value) throws Exception 
 	{
-		if( isListEmpty())
+		if( start == null)
 		{
 			throw new IllegalStateException();
 		}
@@ -291,7 +291,7 @@ public class SinglyLinkedList {
 	 */
 	public Currency getCurrency(int index) 
 	{
-		if( isListEmpty())
+		if( start == null)
 		{
 			throw new IllegalStateException();
 		}
@@ -329,5 +329,10 @@ public class SinglyLinkedList {
 		
 		return val;
 	}
-		
+	
+
+	
+	
+	
+	
 }
