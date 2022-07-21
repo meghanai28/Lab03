@@ -1,4 +1,10 @@
-
+/**
+ * Lab 03
+ * @author Lab Group 7: Meghana Indukuri & Joseph Khamisy
+ * This is the program where all of our operations for LinkedList, Stack and Queue are
+ * tested in the main method.
+ * July 20th 2022
+ */
 public class Main {
 	public static void main (String[] args) throws Exception
 	{
