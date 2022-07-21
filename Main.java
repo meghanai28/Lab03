@@ -13,7 +13,7 @@ public class Main {
 		new Dollar(345.67),new Dollar(36.18), new Dollar(48.48),new Dollar(101.00),new Dollar(11.00),
 		new Dollar(21.00), new Dollar(51.00), new Dollar(1.00), new Dollar(251.00), new Dollar(151.00)};
 		
-		System.out.println("Welcome to SinglyLinkedList, Stack and Queue tester. We will be testing various operations! \n\n");
+		System.out.println("\nWelcome to SinglyLinkedList, Stack and Queue tester. Created by Meghana Indukuri & Joseph Khamisy  \n\n");
 		
 		System.out.println("First we will be testing SinglyLinkedList:");
 		
