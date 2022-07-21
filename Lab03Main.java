@@ -5,7 +5,7 @@
  * tested in the main method.
  * July 20th 2022
  */
-public class Main {
+public class Lab03Main {
 	public static void main (String[] args) throws Exception
 	{
 		Currency []arr = {new Dollar(57.12),new Dollar(23.44), new Dollar(87.43), new Dollar(68.99), new Dollar(111.22),
